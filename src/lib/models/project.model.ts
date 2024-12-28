@@ -53,5 +53,5 @@ export const Project =
 
 export async function getProjects() {
 	await connectToDatabase();
-	return Project.find();
+	return Project.find().lean();
 }

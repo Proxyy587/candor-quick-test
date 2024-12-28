@@ -1,7 +1,7 @@
 "use server";
 
-import { Review, getReviews } from "@/lib/models/review.model";
-import { Project, getProjects } from "@/lib/models/project.model";
+import { Review } from "@/lib/models/review.model";
+import { Project} from "@/lib/models/project.model";
 import { revalidatePath } from "next/cache";
 import { connectToDatabase } from "@/lib/db";
 

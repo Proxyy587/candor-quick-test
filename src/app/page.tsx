@@ -3,16 +3,16 @@ import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { DATA, testimonails } from "@/data/resume";
-import { Project } from "@/lib/models/project.model";
-import { Review } from "@/lib/models/review.model";
+import { getProjects, Project } from "@/lib/models/project.model";
+import { getReviews, Review } from "@/lib/models/review.model";
 import Link from "next/link";
 import Markdown from "react-markdown";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default async function Page() {
-	const reviews = await Review.find();
-	const projects = await Project.find();
+	const reviews = await getReviews();
+	const projects = await getProjects();
 
 	return (
 		<main className="flex flex-col min-h-[100dvh] space-y-6">
